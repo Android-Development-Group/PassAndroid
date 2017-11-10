@@ -26,8 +26,8 @@ internal class MoveToNewTopicUI(private val context: Activity, private val passS
             dialog.dismiss()
         }
 
-        val newTopicEditText = dialog.findViewById(R.id.new_topic_edit) as EditText
-        val suggestionButtonContainer= dialog.findViewById(R.id.topic_suggestions_button_container) as ViewGroup
+        val newTopicEditText = dialog.findViewById<EditText>(R.id.new_topic_edit) as EditText
+        val suggestionButtonContainer = dialog.findViewById<ViewGroup>(R.id.topic_suggestions_button_container) as ViewGroup
 
         // we need to do this here so the dialog does not get dismissed
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {

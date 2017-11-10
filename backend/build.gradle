@@ -3,6 +3,7 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
@@ -11,7 +12,8 @@ buildscript {
 }
 
 repositories {
-    jcenter();
+    google()
+    jcenter()
 }
 
 apply plugin: 'java'

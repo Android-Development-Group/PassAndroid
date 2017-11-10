@@ -32,12 +32,12 @@ fun showCategoryPickDialog(context: Context, pass: Pass, bus: EventBus) {
             val inflater = LayoutInflater.from(context)
             val inflate = inflater.inflate(R.layout.item_nav_pass_category, parent, false)
 
-            val categoryIndicatorView = inflate.findViewById(R.id.categoryView) as BaseCategoryIndicatorView
+            val categoryIndicatorView = inflate.findViewById<BaseCategoryIndicatorView>(R.id.categoryView) as BaseCategoryIndicatorView
 
             val type = getItem(position)
             categoryIndicatorView.setImageByCategory(type)
             categoryIndicatorView.setAccentColor(getCategoryDefaultBG(type))
-            val tv = inflate.findViewById(R.id.navCategoryLabel) as TextView
+            val tv = inflate.findViewById<TextView>(R.id.navCategoryLabel) as TextView
             tv.setText(getHumanCategoryString(type))
 
             return inflate

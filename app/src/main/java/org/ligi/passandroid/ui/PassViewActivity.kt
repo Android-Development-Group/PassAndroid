@@ -68,9 +68,9 @@ class PassViewActivity : PassViewActivityBase() {
                 back_str.append(field.toHtmlSnippet())
             } else {
                 val v = layoutInflater.inflate(R.layout.main_field_item, front_field_container, false)
-                val key = v.findViewById(R.id.key) as TextView
+                val key = v.findViewById<TextView>(R.id.key) as TextView
                 key.text = field.label
-                val value = v.findViewById(R.id.value) as TextView
+                val value = v.findViewById<TextView>(R.id.value) as TextView
                 value.text = field.value
 
                 front_field_container.addView(v)

@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import com.github.salomonbrys.kodein.instance
 import kotlinx.android.synthetic.main.edit.*
@@ -126,14 +127,14 @@ class PassEditActivity : AppCompatActivity() {
 
         val bitmap = currentPass.getBitmap(passStore, imageString)
 
-        val addButton = findViewById(add_logo)!!
+        val addButton = findViewById<Button>(add_logo)!!
         addButton.visibility = if (bitmap == null) View.VISIBLE else View.GONE
 
         val listener = View.OnClickListener {
             PassEditActivityPermissionsDispatcher.pickImageWithCheck(this@PassEditActivity, requestCode)
         }
 
-        val logoImage = findViewById(logo_img) as ImageView
+        val logoImage = findViewById<ImageView>(logo_img) as ImageView
         passViewHelper.setBitmapSafe(logoImage, bitmap)
         logoImage.setOnClickListener(listener)
         addButton.setOnClickListener(listener)
